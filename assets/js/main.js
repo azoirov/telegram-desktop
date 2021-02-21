@@ -26,9 +26,6 @@ if (minutes < 10) {
     Time = `${hours}:${minutes}`;
 }
 // local storage
-let data = JSON.stringify(DATA);
-localStorage.setItem("__data", data);
-let users = JSON.parse(localStorage.getItem("__data")).users;
 
 function renderChats(array) {
     list.innerHTML = "";
@@ -122,11 +119,8 @@ function renderChats(array) {
                         value = ar.join("");
                     }
                     arr.push({ text: value, isOwner: true, date: Time });
-
-                    // localStorage.clear();
-                    localStorage.setItem("__messages", JSON.stringify(arr));
                 }
-                renderMess(JSON.parse(localStorage.getItem("__messages")))
+                renderMess(arr)
                 newListElement.innerHTML = `
             <div class="chats__content__list__element__main">
                 <img src="${element.avatar}" alt="" class="chats__content__list__element__main__avatar">
@@ -254,7 +248,7 @@ function renderChats(array) {
         });
     });
 }
-renderChats(users);
+renderChats(DATA.users);
 
 
 let maximize = document.querySelector('.fa-window-maximize');
