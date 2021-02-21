@@ -1,0 +1,104 @@
+@import "resets";
+
+.telegram-user-infos {
+    width: 310px;
+    height: 100%;
+    border-left: 1px solid $border;
+    @include overflow;
+    .infos {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        background-color: $border;
+        &__title {
+            font-size: 17px;
+            font-weight: bold;
+            padding: 15px 20px;
+            background-color: #fff;
+        }
+        &__main {
+            background-color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            &__avatar {
+                width: 80px;
+                border-radius: 50%;
+                justify-self: start
+            }
+            &__content {
+                padding: 0px 20px;
+                display: flex;
+                flex-direction: column;
+                &__username {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                &__status {
+                    font-size: 14px;
+                    color: $disactive;
+                }
+            }
+        }
+        &__general {
+            display: flex;
+            padding: 15px 15px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            i {
+                justify-content: center;
+                padding: 15px 15px 15px 8px;
+                color: $disactive;
+            }
+            &__content {
+                display: flex;
+                flex-direction: column;
+                &__text {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+                &__subtitle {
+                    font-size: 13px;
+                    color: $disactive;
+                    padding-bottom: 5px;
+                }
+            }
+        }  
+        &__other {
+            padding: 10px 0px;
+            background-color: #fff;
+            flex: 1;
+            &__list {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding-left: 0px;
+                li {
+                    padding: 6px 25px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    color: $disactive;
+                    cursor: pointer;
+                    font-size: 14px;
+                    &:hover {
+                        background-color: $border;
+                    }
+                    i {
+                        width: 20px;
+                        margin-right: 20px;
+                        font-size: 15px;
+                    }
+                    &__element {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+    &.clicked {
+        display: none;
+    }
+
+}

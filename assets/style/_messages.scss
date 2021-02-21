@@ -1,0 +1,200 @@
+@import "resets";
+
+.telegram-messages {
+    flex: 1.5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .messages {
+        &__header {
+            height: 60px;
+            border-bottom: 1px solid $border;
+            display: flex;
+            padding: 0px 20px;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            &__main {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                &__name {
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                &__status {
+                    font-size: 13px;
+                    color: $disactive;
+                }
+            }
+            &__icons {
+                display: flex;
+                align-items: center;
+                i {
+                    padding: 0px 10px;
+                    font-size: 16px;
+                    color: $disactive;
+                    cursor: pointer;
+                    &:hover {
+                        color: #000;
+                    }
+                    &.active {
+                        color: $active;
+                    }
+                }
+                &__dropdown {
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        i {
+                            color: $disactive;
+                        }
+                    }
+                }
+            }
+        }
+        &__content {
+            flex: 1;
+            width: 100%;
+            background-image: url("../img/bg-chat.jpg");
+            padding: 20px;
+            @include overflow;
+            margin: 0px;
+            &__mine {
+                margin-top: 15px;
+                list-style-type: none;
+                display: grid;
+                grid-template-columns: 1fr 70px;
+                grid-template-areas: "mess avatar";
+                &__avatar {
+                    width: 40px;
+                    grid-area: avatar;
+                    border-radius: 50%;
+                    justify-self: flex-end;
+                    align-self: flex-end;
+                    cursor: pointer;
+                }
+                &__mess {
+                    grid-area: mess;
+                    padding: 5px 10px;
+                    background-color: $messMine;
+                    max-width: 350px;
+                    border-radius: 10px;
+                    border-bottom-right-radius: 0px; 
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    // width: fit-content;
+                    justify-self: flex-end;
+                    text-align: left;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        right: -10px;
+                        bottom: 0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 10px 0 0 10px;
+                        border-color: transparent transparent transparent $messMine;
+                    }
+                    &__text {
+                        font-size: 14px;
+                    }
+                    &__time {
+                        align-self: flex-end;
+                        font-size: 13px;
+                        color: $disactive;
+                    }
+                }
+            }
+            &__others {
+                margin-top: 15px;
+                list-style-type: none;
+                display: grid;
+                grid-template-columns: 70px 1fr;
+                grid-template-areas: "avatar mess";
+                &__avatar {
+                    width: 40px;
+                    grid-area: avatar;
+                    border-radius: 50%;
+                    align-self: flex-end;
+                    justify-self: flex-start;
+                    cursor: pointer;
+                }
+                &__mess {
+                    grid-area: mess;
+                    padding: 5px 10px;
+                    background-color: #fff;
+                    max-width: 250px;
+                    position: relative;
+                    border-radius: 10px;
+                    border-bottom-left-radius: 0px;
+                    justify-self: flex-start;
+                    display: flex;
+                    flex-direction: column;
+                    width: fit-content;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: -10px;
+                        bottom: 0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent #ffffff transparent;
+                    }
+                    &__text {
+                        font-size: 14px;
+                    }
+                    &__time {
+                        align-self: flex-end;
+                        font-size: 13px;
+                        color: $disactive;
+                    }
+                }
+            }
+        }
+        &__send {
+            height: 40px;
+            background-color: rgb(255, 255, 255);
+            border-top: 1px solid $border;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            &__file {
+                color: $disactive;
+                padding-right: 10px;
+            }
+            #messageFile {
+                display: none;
+            }
+            &__input {
+                flex: 1;
+                padding: 5px;
+                border: none;
+                outline: none;
+                font-size: 13px;
+                &::placeholder {
+                    font-size: 13px;
+                }
+            }
+            i {
+                padding: 0px 10px;
+                color: $disactive;
+                cursor: pointer;
+            }
+            &__btn {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                i.fa-paper-plane {
+                    color: $active;
+                }
+            }
+        }
+    }
+}

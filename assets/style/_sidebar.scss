@@ -1,0 +1,86 @@
+@import "resets";
+
+.modal.left {
+    .modal-dialog {
+        position: fixed;
+		margin: auto;
+		width: 280px;
+		height: 100%;
+        transform: translate3d(0%, 0, 0);
+    }
+    .modal-content {
+        height: 100%;
+        overflow-y: auto;
+        .modal-header {
+            &__top {
+                width: 100%;
+                height: 200px;
+                background-image: url("../img/bg-chat.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding-top: 30px;
+                display: flex;
+                flex-direction: column;
+                padding-left: 20px;
+                color: #fff;
+                &__avatar {
+                    width: 50px;
+                    border-radius: 50%;
+                }
+                &__name {
+                    padding-top: 5px;
+                }
+                &__num {
+                    font-size: 14px;
+                    padding-bottom: 6px;
+                }
+            }
+        }
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 5px;
+            &__list {
+                display: flex;
+                flex-direction: column;
+                padding: 0px;
+                width: 100%;
+                li {
+                    list-style-type: none;
+                    width: 100%;
+                    display: flex;
+                    padding: 10px 20px;
+                    align-items: center;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $border;
+                    }
+                    i {
+                        margin-right: 20px;
+                        color: $disactive;
+                        width: 20px;
+                    }
+                    span {
+                        font-size: 14px;
+                        color: #000!important;
+                        font-weight: bolder;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        i {
+                            padding-left: 30px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+            &__subtitle {
+                font-size: 14px;
+                color: $disactive;
+                padding-bottom: 30px;
+                align-self: center;
+            }
+        }
+    }
+}

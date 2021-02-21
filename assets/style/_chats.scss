@@ -1,0 +1,116 @@
+@import "resets";
+
+.telegram-chats {
+    width: 400px;
+    height: 100%;
+    border-right: 1px solid $border;
+    display: flex;
+    flex-direction: column;
+    .chats {
+        &__header {
+            height: 60px;
+            border-bottom: 1px solid $border;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 20px;
+            &__input {
+                width: 90%;
+                height: 35px;
+                outline: none;
+                border: 1px solid #fff;
+                padding: 0px 10px;
+                border-radius: 3px;
+                font-size: 13px;
+                background-color: $element-hover;
+                &:focus {
+                    border: 1px solid $active;
+                    background-color: #fff;
+                }
+                &::placeholder {
+                    font-size: 13px;
+                }
+            }
+            i {
+                cursor: pointer;
+                color: $disactive;
+                &:hover {
+                    color: $active;
+                }
+            }
+        }
+        &__content {
+            flex: 1;
+            @include overflow;
+            width: 100%;
+            &__list {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0px;
+                justify-content: center;
+                &__element {
+                    list-style-type: none;
+                    height: 60px;
+                    width: 100%;
+                    display: flex;
+                    padding: 0px 20px;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #fff;
+                    color: rgb(0, 0, 0);
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $element-hover;
+                    }
+                    &__main {
+                        display: flex;
+                        background-color: transparent;
+                        &__avatar {
+                            width: 45px;
+                            border-radius: 50%;
+                        }
+                        &__content {
+                            display: flex;
+                            padding: 0px 20px;
+                            flex-direction: column;
+                            &__username {
+                                font-size: 15px;
+                                font-weight: 600;
+                            }
+                            &__lastmess {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                    &__other {
+                        background-color: transparent;
+                        font-size: 13px;
+                        display: flex;
+                        // color: $active;
+                        flex-direction: column;
+                        &__time {
+                            font-size: 13px;
+                        }
+                        &__icon {
+                            color: $succes;
+                        }
+                    }
+                    &.active {
+                        background-color: $active;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+.not__found {
+    padding-top: 30px;
+    font-size: 20px;
+    justify-self: center;
+    list-style-type: none;
+    font-weight: bold;
+    text-align: center;
+}
