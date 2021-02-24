@@ -256,3 +256,14 @@ maximize.addEventListener('click', event => {
     userInfoSideBar.classList.toggle('clicked');
     maximize.classList.toggle('active');
 });
+
+
+// let sidebarModal = document.querySelector("#sidebarModal");
+// let openSettings = document.querySelector(".open-settings");
+// openSettings.addEventListener("click", event => {
+//     sidebarModal.style.display = "none";
+// });
+
+$(".open-settings").click(function(){
+    $("#sidebarModal").modal("hide");
+});
