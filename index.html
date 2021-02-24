@@ -9,8 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c413707f17.js" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/style/main.css">
+
+    <link rel="stylesheet" href="assets/style/settings.css">
 
     <title>Document</title>
 </head>
@@ -22,13 +24,11 @@
         <div class="modal left fade" id="sidebarModal" tabindex="-1" role="dialog" aria-labelledby="sidebarModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-
                     <div class="modal-header__top">
                         <img src="./assets/img/emblem.jpg" alt="" class="modal-header__top__avatar">
                         <span class="modal-header__top__name">Asadbek Zoirov</span>
                         <span class="modal-header__top__num">+998 99 8211744</span>
                     </div>
-
                     <div class="modal-body bg-light">
                         <ul class="modal-body__list">
                             <li>
@@ -47,7 +47,7 @@
                                 <i class="fas fa-phone-alt"></i>
                                 <span>Calls</span>
                             </li>
-                            <li>
+                            <li class="open-settings" data-bs-toggle="modal" data-bs-target="#settingsModal">
                                 <i class="fas fa-cog"></i>
                                 <span>Setting</span>
                             </li>
@@ -67,6 +67,96 @@
                 </div><!-- modal-content -->
             </div><!-- modal-dialog -->
         </div><!-- modal -->
+        <!-- Modal -->
+        <div class="modal settings modal-settings fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable settings__dialog">
+                <div class="modal-content settings__dialog__content">
+                    <div class="modal-header settings__dialog__content__header">
+                        <div class="settings__dialog__content__header__main">
+                            <h5 class="settings__dialog__content__header__main__title">Settings</h5>
+                            <div class="settings__dialog__content__header__main__btns">
+                                <div class="dropdown messages__header__icons__dropdown">
+                                    <button class="" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <li><a class="dropdown-item" href="#">Add account</a></li>
+                                        <li><a class="dropdown-item" href="#">Edit profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Log out</a></li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="settings__dialog__content__header__content">
+                            <img class="settings__dialog__content__header__content__avatar"
+                                src="assets/img/emblem.jpg" alt="">
+                            <div class="settings__dialog__content__header__content__main">
+                                <span class="settings__dialog__content__header__content__main__title">Asadbek
+                                    Zoirov</span>
+                                <span
+                                    class="settings__dialog__content__header__content__main__status">online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body settings__dialog__content__body">
+                        <ul class="settings__dialog__content__body__list">
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Edit profile</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-bell"></i>
+                                <span>Notifications</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-lock"></i>
+                                <span>Privacy and security</span>
+                            </li>
+                            <li>
+                                <i class="far fa-comment-alt"></i>
+                                <span>Chat settings</span>
+                            </li>
+                            <li>
+                                <i class="far fa-folder"></i>
+                                <span>Folders</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-sliders-h"></i>
+                                <span>Advanced</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-language"></i>
+                                <span class="settings-lan">
+                                    <span class="settings-lan-title">Language</span>
+                                    <span class="settings-lan-type">English</span>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="settings__dialog__content__body__other">
+                            <span class="settings__dialog__content__body__other__scale">
+                                <i class="far fa-eye"></i>
+                                <span class="settings__dialog__content__body__other__scale__title">
+                                    <span class="settings-lan-title">Default Interface scale</span>
+                                    <i class="fas fa-toggle-on"></i>
+                                </span>
+                            </span>
+                            <ul class="settings__dialog__content__body__other__percent">
+                                <li>100%</li>
+                                <li>125%</li>
+                                <li>150%</li>
+                                <li>200%</li>
+                                <li>250%</li>
+                                <li>300%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="telegram-chats">
             <div class="chats__header">
                 <i class="fas fa-bars" data-bs-toggle="modal" data-bs-target="#sidebarModal"></i>
@@ -135,7 +225,7 @@
 
             </div>
         </div>
-    
+
 
 
         <!-- JavaScript -->
@@ -147,6 +237,7 @@
         <script src="assets/js/chats.js"></script>
         <script src="assets/js/main.js"></script>
         <script src="assets/js/filter.js"></script>
+        <script src="assets/js/sendMess.js"></script>
     </div>
 </body>
 
