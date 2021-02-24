@@ -960,6 +960,275 @@
       align-self: center;
 }
 
+.settings__dialog {
+  width: 400px;
+  height: 500px;
+  overflow-y: auto;
+  /* Track */
+  /* Handle */
+}
+
+.settings__dialog::-webkit-scrollbar {
+  width: 3px;
+}
+
+.settings__dialog::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px grey;
+          box-shadow: inset 0 0 2px grey;
+  border-radius: 5px;
+}
+
+.settings__dialog::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 10px;
+}
+
+.settings__dialog__content {
+  background-color: #eeeeee;
+}
+
+.settings__dialog__content__header {
+  background-color: #fff;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 15px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.settings__dialog__content__header__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings__dialog__content__header__main__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.settings__dialog__content__header__main__btns {
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings__dialog__content__header__main__btns .dropdown button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.settings__dialog__content__header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0px;
+}
+
+.settings__dialog__content__header__content__avatar {
+  width: 90px;
+  border-radius: 50%;
+}
+
+.settings__dialog__content__header__content__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 90%;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.settings__dialog__content__header__content__main__title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.settings__dialog__content__header__content__main__status {
+  font-size: 14px;
+  color: #3ab6e7;
+}
+
+.settings__dialog__content__body {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.settings__dialog__content__body__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 7px 0px;
+}
+
+.settings__dialog__content__body__list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 17px;
+  padding: 8px 25px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.settings__dialog__content__body__list li i {
+  width: 15px;
+  color: #6e6e6e;
+  margin-right: 20px;
+}
+
+.settings__dialog__content__body__list li span {
+  color: #000;
+  font-weight: 400;
+}
+
+.settings__dialog__content__body__list li span.settings-lan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings__dialog__content__body__list li span.settings-lan-type {
+  color: #3ab6e7;
+  font-size: 14px;
+}
+
+.settings__dialog__content__body__list li:hover {
+  background-color: #eeeeee;
+}
+
+.settings__dialog__content__body__other {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+}
+
+.settings__dialog__content__body__other__scale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 25px;
+}
+
+.settings__dialog__content__body__other__scale i {
+  width: 15px;
+  margin-right: 20px;
+  color: #6e6e6e;
+}
+
+.settings__dialog__content__body__other__scale__title {
+  font-weight: 400;
+  color: #000;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings__dialog__content__body__other__scale__title i {
+  color: #3ab6e7;
+}
+
+.settings__dialog__content__body__other__percent {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12px;
+  padding-top: 25px;
+  padding-right: 25px;
+}
+
+.settings__dialog__content__body__other__percent li:first-child {
+  list-style: none;
+  width: 50px;
+  text-align: center;
+  position: relative;
+  margin-left: 2px;
+}
+
+.settings__dialog__content__body__other__percent li:first-child::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #3ab6e7;
+  top: -8px;
+  left: 0px;
+}
+
+.settings__dialog__content__body__other__percent li {
+  list-style: none;
+  width: 50px;
+  text-align: center;
+  position: relative;
+  margin-left: 2px;
+}
+
+.settings__dialog__content__body__other__percent li::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #eeeeee;
+  top: -8px;
+  left: 0px;
+}
+
 * {
   margin: 0;
   padding: 0;
